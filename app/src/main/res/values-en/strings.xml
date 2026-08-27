@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My first Android project</string>
+
+    <string name="TextView_title_text">System login</string>
+    <string name="editText_user_hint">Enter the username</string>
+    <string name="editText_password_hint">Enter the password</string>
+
+    <string name="button_ok_text">Accept</string>
+    <string name="button_close_text">Close</string>
+    <string name="button_biometric_text">Fingerprint</string>
+    <string name="buttonBrouserClic">Navigator</string>
+    <string name="button_maps">Maps</string>
+
+    <!-- Strings for Second Activity -->
+    <string name="textView_title_activity">Maintenance: Books</string>
+    <string name="editText_code_hint">Product Code</string>
+    <string name="editText_author_hint">Author </string>
+    <string name="editText_description_hint">Description</string>
+    <string name="editText_price_hint">Price</string>
+
+    <string name="button_insert_text">Insert</string>
+    <string name="button_search_text">Search</string>
+    <string name="button_modify_text">Modify</string>
+    <string name="button_delete_text">Delete</string>
+</resources>

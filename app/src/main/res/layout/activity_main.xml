@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="presentation.MainActivity" >
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TextView_title_text"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:ignore="VisualLintSystemUi" />
+
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/editText_user_hint"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/editText_password_hint"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        tools:ignore="TextFields,VisualLintTextFieldSize" />
+
+    <Button
+        android:id="@+id/buttonOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonOkClic"
+        android:text="@string/button_ok_text"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonBiometric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonBiometricClic"
+        android:text="@string/button_biometric_text"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonCloseClic"
+        android:text="@string/button_close_text" />
+</LinearLayout>

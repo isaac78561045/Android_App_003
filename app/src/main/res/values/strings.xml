@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Mi primer proyecto en Android </string>
+
+    <string name="TextView_title_text">Ingreso al sistema</string>
+    <string name="editText_user_hint">Ingrese el usuario</string>
+    <string name="editText_password_hint">Ingrese la clave</string>
+
+    <string name="button_ok_text">Aceptar</string>
+    <string name="button_close_text">Cerrar</string>
+    <string name="button_biometric_text">Huella Dactilar</string>
+    <string name="buttonBrouserClic">Navegador</string>
+    <string name="button_maps">Maps</string>
+
+    <!-- Strings para la Segunda Actividad -->
+    <string name="textView_title_activity">Mantenimiento: Libros</string>
+    <string name="editText_code_hint">Código del producto</string>
+    <string name="editText_author_hint">Autor </string>
+    <string name="editText_description_hint">Descripción</string>
+    <string name="editText_price_hint">Precio</string>
+
+    <string name="button_insert_text">Insertar</string>
+    <string name="button_search_text">Buscar</string>
+    <string name="button_modify_text">Modificar</string>
+    <string name="button_delete_text">Eliminar</string>
+</resources>

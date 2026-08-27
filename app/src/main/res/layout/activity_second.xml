@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="presentation.SecondActivity">
+
+    <TextView
+        android:id="@+id/textViewTitleActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:text="@string/textView_title_activity"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonBrowserClic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonBrouserClic"
+        android:onClick="buttonBrouserClic"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_maps"
+        android:onClick="buttonMapsClic"
+        android:layout_marginBottom="16dp"
+        tools:ignore="VisualLintButtonSize" />
+
+    <EditText
+        android:id="@+id/editTextCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editText_code_hint"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editText_author_hint"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editText_description_hint"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/editText_price_hint"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_insert_text"
+        android:onClick="buttonInsertClic"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_search_text"
+        android:onClick="buttonSearchClic"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonModified"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_modify_text"
+        android:onClick="buttonModifiedClic"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_delete_text"
+        android:onClick="buttonDeleteClic"
+        tools:ignore="VisualLintButtonSize" />
+
+</LinearLayout>
