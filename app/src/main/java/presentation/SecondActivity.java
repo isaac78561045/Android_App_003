@@ -52,14 +52,18 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void buttonInsertClic(View view) {
+        // Conexión a la base de datos
         MainHelper helper = new MainHelper(this, "LibrosDB", null, 1);
+        // Abrir la base de datos en modo escritura
         SQLiteDatabase db = helper.getWritableDatabase();
 
+        // Obtener datos de los controles
         String code = editTextCode.getText().toString();
         String author = editTextAuthor.getText().toString();
         String description = editTextDescription.getText().toString();
         String price = editTextPrice.getText().toString();
 
+        // Validar que no estén vacíos
         if (!code.isEmpty() && !author.isEmpty() && !description.isEmpty() && !price.isEmpty()) {
             ContentValues values = new ContentValues();
             values.put("Code", code);
@@ -67,29 +71,43 @@ public class SecondActivity extends AppCompatActivity {
             values.put("Description", description);
             values.put("Price", price);
 
-            long result = db.insert("Books", null, values);
-            if (result != -1) {
-                Toast.makeText(this, "Registro insertado con éxito", Toast.LENGTH_SHORT).show();
+            // Enviar a la BD
+            long count = db.insert("Books", null, values);
+
+            if (count > 0) {
+                Toast.makeText(this, "Registro insertado ", Toast.LENGTH_SHORT).show();
                 clearFields();
             } else {
-                Toast.makeText(this, "Error al insertar registro", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No se puede insertar el registro", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show();
         }
+        // Cerrar la conexión
         db.close();
+    }
+    private void cleanControls(){
+        editTextCode.setText("");
+        editTextAuthor.setText("");
+        editTextDescription.setText("");
+        editTextPrice.setText("");
     }
 
     public void buttonSearchClic(View view) {
+        // Conexión a la base de datos
         MainHelper helper = new MainHelper(this, "LibrosDB", null, 1);
+        // Abrir la base de datos en modo lectura
         SQLiteDatabase db = helper.getReadableDatabase();
 
+        // Obtener el código para buscar
         String code = editTextCode.getText().toString();
 
         if (!code.isEmpty()) {
+            // Ejecutar consulta
             Cursor cursor = db.rawQuery("SELECT Author, Description, Price FROM Books WHERE Code=" + code, null);
 
             if (cursor.moveToFirst()) {
+                // Mostrar resultados en los campos
                 editTextAuthor.setText(cursor.getString(0));
                 editTextDescription.setText(cursor.getString(1));
                 editTextPrice.setText(cursor.getString(2));
@@ -101,13 +119,17 @@ public class SecondActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Ingrese un código para buscar", Toast.LENGTH_SHORT).show();
         }
+        // Cerrar la conexión
         db.close();
     }
 
     public void buttonModifiedClic(View view) {
+        // Conexión a la base de datos
         MainHelper helper = new MainHelper(this, "LibrosDB", null, 1);
+        // Abrir la base de datos en modo escritura
         SQLiteDatabase db = helper.getWritableDatabase();
 
+        // Obtener datos de los controles
         String code = editTextCode.getText().toString();
         String author = editTextAuthor.getText().toString();
         String description = editTextDescription.getText().toString();
@@ -119,35 +141,42 @@ public class SecondActivity extends AppCompatActivity {
             values.put("Description", description);
             values.put("Price", price);
 
+            // Actualizar registro en la BD
             int count = db.update("Books", values, "Code=" + code, null);
             if (count > 0) {
                 Toast.makeText(this, "Registro modificado con éxito", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "No se encontró el registro", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No se encontró el registro para modificar", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Complete todos los campos para modificar", Toast.LENGTH_SHORT).show();
         }
+        // Cerrar la conexión
         db.close();
     }
 
     public void buttonDeleteClic(View view) {
+        // Conexión a la base de datos
         MainHelper helper = new MainHelper(this, "LibrosDB", null, 1);
+        // Abrir la base de datos en modo escritura
         SQLiteDatabase db = helper.getWritableDatabase();
 
+        // Obtener el código para eliminar
         String code = editTextCode.getText().toString();
 
         if (!code.isEmpty()) {
+            // Eliminar registro de la BD
             int count = db.delete("Books", "Code=" + code, null);
             if (count > 0) {
-                Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Registro eliminado correctamente", Toast.LENGTH_SHORT).show();
                 clearFields();
             } else {
-                Toast.makeText(this, "No se encontró el registro", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No se encontró el registro para eliminar", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Ingrese un código para eliminar", Toast.LENGTH_SHORT).show();
         }
+        // Cerrar la conexión
         db.close();
     }
 
